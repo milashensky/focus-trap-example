@@ -1,0 +1,13 @@
+name: "Setup Node.js from .nvmrc"
+runs:
+  using: "composite"
+  steps:
+    - name: Read .nvmrc
+      shell: bash
+      run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: Show newly installed Node.js version
+        run: node --version
