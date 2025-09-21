@@ -51,6 +51,8 @@ jobs:
       - uses: ./.github/actions/cache-ci
 
       - name: Build
+        env:
+          VITE_BASE_PATH: ${{ vars.PAGE_BASE_PATH }}
         run: npm run build
 
       - name: Setup Pages
