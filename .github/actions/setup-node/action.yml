@@ -10,4 +10,5 @@ runs:
       with:
         node-version: ${{ env.NODE_VERSION }}
     - name: Show newly installed Node.js version
-        run: node --version
+      shell: bash
+      run: node --version
