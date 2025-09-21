@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig((mode) => {
+    // eslint-disable-next-line no-undef
     const env = loadEnv(mode, process.cwd(), '')
     const base = env.VITE_BASE_PATH || '/'
     return {
